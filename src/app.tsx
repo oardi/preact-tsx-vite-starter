@@ -1,8 +1,9 @@
 import { useState } from 'preact/hooks';
 import preactLogo from './assets/preact.svg';
 import './app.css';
+import type { JSXInternal } from 'preact/src/jsx';
 
-export function App() {
+export function App(): JSXInternal.Element {
 	const [count, setCount] = useState(0);
 
 	return (
@@ -17,7 +18,7 @@ export function App() {
 			</div>
 			<h1>Vite + Preact</h1>
 			<div class="card">
-				<button onClick={() => setCount(count => count + 1)}>count is {count}</button>
+				<button onClick={(): void => setCount(count => count + 1)}>count is {count}</button>
 			</div>
 		</>
 	);
